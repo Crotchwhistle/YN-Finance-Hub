@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1735384514938,
+      "tag": "0000_dapper_white_tiger",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1735386379123,
+      "tag": "0001_loose_black_tom",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1735472960044,
+      "tag": "0002_empty_legion",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1735477222015,
+      "tag": "0003_short_tyger_tiger",
+      "breakpoints": true
+    }
+  ]
+}
