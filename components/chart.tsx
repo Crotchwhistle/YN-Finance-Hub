@@ -14,7 +14,7 @@ import {
     CardHeader,
     CardTitle
 } from "@/components/ui/card"
-import { AreaChart, BarChart3, Car, FileSearch, LineChart, Loader2 } from "lucide-react"
+import { AreaChart, BarChart3, FileSearch, LineChart, Loader2 } from "lucide-react"
 import { AreaVariant } from "./area-variant"
 import { BarVariant } from "./bar-variant"
 import { LineVariant } from "./line-variant"
