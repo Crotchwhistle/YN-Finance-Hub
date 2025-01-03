@@ -3,6 +3,7 @@ import { HeaderLogo } from "@/components/header-logo"
 import { WelcomeMsg } from "@/components/welcome-msg"
 import { UserButton, ClerkLoading, ClerkLoaded } from "@clerk/nextjs"
 import { Loader2 } from "lucide-react"
+import { Filters } from "./filters"
 
 export const Header = () => {
     return (
@@ -23,6 +24,7 @@ export const Header = () => {
                 </div>
 
                 <WelcomeMsg />
+                <Filters />
             </div>
         </header>
     )
