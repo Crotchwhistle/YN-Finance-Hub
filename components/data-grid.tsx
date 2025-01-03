@@ -1,5 +1,7 @@
 "use client";
 
+import { Suspense } from 'react'
+
 import { useGetSummary } from "@/features/summary/api/use-get-summary";
 import { formatDateRange } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
@@ -18,37 +20,41 @@ export const DataGrid = () => {
 
     if (isLoading) {
         return (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-2 mb-8">
-                <DataCardLoading />
-                <DataCardLoading />
-                <DataCardLoading />
-            </div>
+            <Suspense>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-2 mb-8">
+                    <DataCardLoading />
+                    <DataCardLoading />
+                    <DataCardLoading />
+                </div>
+            </Suspense>
         )
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-2 mb-8">
-            <DataCard 
-                title='Remaining'
-                value={data?.remainingAmount}
-                percentageChange={data?.remainingChange}
-                icon={FaPiggyBank}
-                dateRange={dateRangeLabel}
-            />
-            <DataCard 
-                title='Income'
-                value={data?.incomeAmount}
-                percentageChange={data?.incomeChange}
-                icon={FaArrowTrendUp}  
-                dateRange={dateRangeLabel}
-            />
-            <DataCard 
-                title='Expenses'
-                value={data?.expensesAmount}
-                percentageChange={data?.expensesChange}
-                icon={FaArrowTrendDown}
-                dateRange={dateRangeLabel}
-            />
-        </div>
+        <Suspense>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-2 mb-8">
+                <DataCard 
+                    title='Remaining'
+                    value={data?.remainingAmount}
+                    percentageChange={data?.remainingChange}
+                    icon={FaPiggyBank}
+                    dateRange={dateRangeLabel}
+                />
+                <DataCard 
+                    title='Income'
+                    value={data?.incomeAmount}
+                    percentageChange={data?.incomeChange}
+                    icon={FaArrowTrendUp}  
+                    dateRange={dateRangeLabel}
+                />
+                <DataCard 
+                    title='Expenses'
+                    value={data?.expensesAmount}
+                    percentageChange={data?.expensesChange}
+                    icon={FaArrowTrendDown}
+                    dateRange={dateRangeLabel}
+                />
+            </div>
+        </Suspense>
     )
 }
